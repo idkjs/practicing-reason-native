@@ -1,8 +1,30 @@
-# bs-var-test
+# practicing-reason-native
 
-A project which demonstrates a Reason workflow with [Esy][].
+## notes
 
-[esy]: https://github.com/esy/esy
+Per [discord](https://discordapp.com/channels/235176658175262720/235200837608144898/624310389735161887), to run the `Filtering.re` example:
+
+```reason
+cat library/filtering.json | esy start
+```
+
+Example comes from [yojson](https://github.com/ocaml-community/yojson/tree/master/examples)
+
+Other examples in [RealWorldOCaml](https://discordapp.com/channels/235176658175262720/235200837608144898/624308512058638346)
+
+To pass a file from the local directory to `yojson` use `Yojson.Basic.from_file`:
+
+```reason
+let filePath = "./library/filtering.json";
+let main = () => {
+  let json = Yojson.Basic.from_file(filePath);
+  List.iter(print_endline, extract_titles(json));
+};
+
+let () = main();
+```
+
+I am used to calling `./filtering.json` for a file that sits next to the file with the function in it. Here I had to call it with the name of the current directory, `./library/filtering.json` for some reason.
 
 ## Usage
 
@@ -38,7 +60,7 @@ Documentation for the libraries in the project can be generated with:
 
     % esy doc
     % open-cli `esy echo '#{self.target_dir}/default/_doc/_html/index.html'`
-    
+
 This assumes you have a command like [open-cli](https://github.com/sindresorhus/open-cli) installed on your system.
 
 Shell into environment:

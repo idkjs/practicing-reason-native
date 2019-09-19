@@ -7,8 +7,14 @@ let extract_titles = json =>
   |> filter_member("title")
   |> filter_string;
 
+// let main = () => {
+//   let json = Yojson.Basic.from_channel(stdin);
+//   List.iter(print_endline, extract_titles(json));
+// };
+
+let filePath = "./library/filtering.json";
 let main = () => {
-  let json = Yojson.Basic.from_channel(stdin);
+  let json = Yojson.Basic.from_file(filePath);
   List.iter(print_endline, extract_titles(json));
 };
 
