@@ -11,3 +11,5 @@ let hello: (unit) => string;
 // let helloArr: (unit => array(string)) => string;
 
 let ticks: array(string);
+let ticks2: array(string);
+let ticks3: array(string);

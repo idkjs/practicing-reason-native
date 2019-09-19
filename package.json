@@ -5,50 +5,22 @@
   "esy": {
     "build": "refmterr dune build -p #{self.name}",
     "NOTE": "Optional release Section. Customizes result of `esy release`",
-    "release": {
-      "releasedBinaries": [
-        "BsVarTestApp.exe"
-      ]
-    },
-    "buildEnv": {
-      "ODOC_SYNTAX": "re"
-    }
+    "release": { "releasedBinaries": [ "BsVarTestApp.exe" ] },
+    "buildEnv": { "ODOC_SYNTAX": "re" }
   },
   "buildDirs": {
     "test": {
-      "require": [
-        "bs-var-test/library",
-        "rely.lib"
-      ],
-      "flags": [
-        "-linkall",
-        "-g",
-        "-w",
-        "-9"
-      ]
+      "require": [ "bs-var-test/library", "rely.lib" ],
+      "flags": [ "-linkall", "-g", "-w", "-9" ]
     },
     "testExe": {
-      "require": [
-        "bs-var-test/test"
-      ],
-      "bin": {
-        "RunBsVarTestTests.exe": "RunBsVarTestTests.re"
-      }
+      "require": [ "bs-var-test/test" ],
+      "bin": { "RunBsVarTestTests.exe": "RunBsVarTestTests.re" }
     },
-    "library": {
-      "require": [
-        "console.lib",
-        "pastel.lib",
-        "belt"
-      ]
-    },
+    "library": { "require": [ "console.lib", "pastel.lib", "belt","yojson" ] },
     "bin": {
-      "require": [
-        "bs-var-test/library"
-      ],
-      "bin": {
-        "BsVarTestApp.exe": "BsVarTestApp.re"
-      }
+      "require": [ "bs-var-test/library" ],
+      "bin": { "BsVarTestApp.exe": "BsVarTestApp.re" }
     }
   },
   "scripts": {
@@ -58,14 +30,15 @@
     "doc-path": "esy echo #{self.target_dir}/default/_doc/_html/index.html"
   },
   "dependencies": {
+    "@esy-ocaml/reason": "*",
     "@opam/dune": "*",
+    "@opam/yojson": "1.7.0",
     "@reason-native/console": "*",
     "@reason-native/pastel": "*",
     "@reason-native/rely": "*",
-    "@esy-ocaml/reason": "*",
-    "refmterr": "*",
     "belt": "jaredly/belt",
-    "ocaml": "~4.7.0"
+    "ocaml": "~4.7.0",
+    "refmterr": "*"
   },
   "devDependencies": {
     "@opam/merlin": "*",

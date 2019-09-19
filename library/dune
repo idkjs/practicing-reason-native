@@ -1,2 +1,2 @@
 (library (name Library) (public_name bs-var-test.library)
-    (libraries console.lib pastel.lib belt)) 
+    (libraries console.lib pastel.lib belt yojson)) 

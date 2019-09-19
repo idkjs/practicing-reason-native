@@ -1,5 +1,5 @@
 {
-  "checksum": "05a1d35f31e7b1d15a16da4daa656475",
+  "checksum": "51c30add713d0693c2f405be13a12146",
   "root": "bs-var-test@link-dev:./package.json",
   "node": {
     "refmterr@3.2.2@d41d8cd9": {
@@ -91,6 +91,7 @@
         "@reason-native/rely@3.1.0@d41d8cd9",
         "@reason-native/pastel@0.2.1@d41d8cd9",
         "@reason-native/console@0.1.0@d41d8cd9",
+        "@opam/yojson@opam:1.7.0@7056d985",
         "@opam/dune@opam:1.11.3@9894df55", "@esy-ocaml/reason@3.5.0@d41d8cd9"
       ],
       "devDependencies": [
