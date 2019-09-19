@@ -1,0 +1,2 @@
+(executable (name RunBsVarTestTests) (public_name RunBsVarTestTests.exe)
+    (libraries bs-var-test.test)) 
